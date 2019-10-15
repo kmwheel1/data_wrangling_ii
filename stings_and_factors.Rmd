@@ -1,0 +1,52 @@
+---
+title: "strings_and_factors"
+author: "Kylie Wheelock Riley"
+date: "10/15/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(rvest)
+##library(p8105.datasets)
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+string_vec = c("my", "name", "is", "jeff")
+
+str_detect(string_vec, "jeff")
+##detect the presence or absence of an item in a string. Does the string "jeff" exist in the df.
+```
+
+```{r}
+str_replace(string_vec, "jeff", "Jeff")
+##replacing piece of a string with a different piece you are interested in. 
+```
+
+```{r}
+string_vec = c(
+  "i think we all rule for participating",
+  "i think i have been caught",
+  "i think this will be quite fun actually",
+  "it will be fun, i think"
+  )
+
+str_detect(string_vec, "^i think")
+#carrot ^ indicates this is the start of the sting (last one does not count because the string does not start with it.)
+##can do without carrot to pick up "i think" in any part of the string. 
+```
+
+```{r}
+string_vec = c(
+  "Y'all remember Pres. HW Bush?",
+  "I saw a green bush",
+  "BBQ and Bushwalking at Molonglo Gorge",
+  "BUSH -- LIVE IN CONCERT!!"
+  )
+
+str_detect(string_vec,"[Bb]ush")
+##Detects uppercase or lowercase B's, but not an all caps
+```
+
